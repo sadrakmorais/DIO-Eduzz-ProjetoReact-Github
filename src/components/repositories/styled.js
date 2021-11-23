@@ -17,12 +17,14 @@ WrapperTabList.tabsRole = "TabList";
 
 export const WrapperTab = styled(Tab)`
   border-radius: 16px;
-  border: 1px solid #ccc;
+  border: 2px solid #4b134f;
   padding: 16px;
   user-select: none;
   cursor: pointer;
   z-index: 99999;
+  color: #4b134f;
   background-color: "#fff";
+  font-family: "Montserrat", sans-serif;
   margin: 8px;
   &:focus {
     outline: none;
@@ -35,11 +37,13 @@ WrapperTab.tabsRole = "Tab";
 
 export const WrapperTabPanel = styled(TabPanel)`
   padding: 16px;
-  border: 1px solid "#ccc";
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2);
   display: none;
   margin-top: -5px;
   &.is-selected {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 `;
 WrapperTabPanel.tabsRole = "TabPanel";

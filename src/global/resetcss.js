@@ -13,10 +13,10 @@ export const ResetCss = createGlobalStyle`
   border-style: solid;
   border-width: 0;
 }
-h1,h2,h3,h4{
+h1,h2,h3,h4,button{
   font-family: 'Montserrat', sans-serif;
 }
-span,p,a{
+span,p,a,button{
   font-family: 'Poppins', sans-serif;
 }
 /* Document */
@@ -43,6 +43,7 @@ html {
 
 body {
   margin: 0;
+  background:#fff;
 }
 
 /**

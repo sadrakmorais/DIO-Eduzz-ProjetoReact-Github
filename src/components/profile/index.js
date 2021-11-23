@@ -4,13 +4,18 @@ import * as S from "./styled";
 
 const Profile = () => {
   const { githubState } = useGithub();
+  console.log(githubState.user.avatar_url, githubState.user.login);
 
   return (
     <S.Wrapper>
-      <S.WrapperImage src={githubState.user.avatar} alt="Avatar of user" />
+      <S.WrapperImage src={githubState.user.avatar_url} alt="Avatar of user" />
       <S.WrapperInfoUser>
         <div>
           <h1>{githubState.user.name}</h1>
+          <S.WrapperUserGeneric>
+            <h3>Bio:</h3>
+            {githubState.user.bio}
+          </S.WrapperUserGeneric>
           <S.WrapperUserGeneric>
             <h3>Username:</h3>
             <a
@@ -28,12 +33,6 @@ const Profile = () => {
           <S.WrapperUserGeneric>
             <h3>Location:</h3>
             <span>{githubState.user.location}</span>
-          </S.WrapperUserGeneric>
-          <S.WrapperUserGeneric>
-            <h3>Blog:</h3>
-            <a href={githubState.user.blog} target="_blank" rel="noreferrer">
-              {githubState.user.blog}
-            </a>
           </S.WrapperUserGeneric>
         </div>
         <S.WrapperStatusCount>

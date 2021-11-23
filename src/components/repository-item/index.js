@@ -1,12 +1,21 @@
 import React from "react";
+import * as S from "./styled";
 
-const RepositoryItem = ({ name, fullName, linkToRepo }) => {
+const RepositoryItem = ({ name, author, linkToRepo, authorLink }) => {
   return (
-    <div>
-      <h2>{name}</h2>
-      <h4>{fullName}</h4>
-      <span>{linkToRepo}</span>
-    </div>
+    <S.Wrapper>
+      <h2>Nome: {name}</h2>
+      {!!authorLink ? (
+        <a href={authorLink} target="_blank" rel="noreferrer">
+          Autor: {author}
+        </a>
+      ) : (
+        <></>
+      )}
+      <a href={linkToRepo} target="_blank" rel="noreferrer">
+        ABRIR REPOSITÓRIO
+      </a>
+    </S.Wrapper>
   );
 };
 
